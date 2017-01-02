@@ -1,0 +1,27 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>de.stefankruk</groupId>
+    <artifactId>parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Microservice-System</name>
+
+    <modules>
+        <module>eureka-microservice</module>
+    </modules>
+
+    <scm>
+        <url>https://github.com/StefanKruk/Microservice-System.git</url>
+        <connection>scm:git:git@github.com:StefanKruk/Microservice-System.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:StefanKruk/Microservice-System.git</developerConnection>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+</project>
