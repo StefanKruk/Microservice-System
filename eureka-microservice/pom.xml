@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>de.stefankruk</groupId>
+    <groupId>de.stefankruk.microservice</groupId>
     <artifactId>eureka-microservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 

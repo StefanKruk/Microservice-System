@@ -1,4 +1,4 @@
-package de.stefankruk.microservice.eureka;
+package de.stefankruk.microservice.microservice.eureka;
 
 import com.github.vanroy.cloud.dashboard.config.EnableCloudDashboard;
 import org.springframework.boot.SpringApplication;
