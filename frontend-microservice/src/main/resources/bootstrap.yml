@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: frontend
+
+spring.mvc.view.prefix: /WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
+
+welcome.message: Hello Stefan
+
+encrypt:
+  failOnError: false
