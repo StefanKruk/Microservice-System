@@ -1,11 +1,27 @@
 spring:
   application:
-    name: frontend
+    name: frontend-microservice
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
 
-spring.mvc.view.prefix: /WEB-INF/jsp/
-spring.mvc.view.suffix: .jsp
+endpoints:
+    restart:
+        enabled: true
+    shutdown:
+        enabled: true
+    health:
+        sensitive: false
 
-welcome.message: Hello Stefan
+eureka:
+    host: localhost
+    instance:
+        health-check-url: http://${eureka.host}:${server.port}/
+        instance:
+            statusPageUrlPath: /info
+            healthCheckUrlPath: /health
 
-encrypt:
-  failOnError: false
+    client:
+        serviceUrl:
+            defaultZone: http://${eureka.host}:8761/eureka/
