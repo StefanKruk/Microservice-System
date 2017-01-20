@@ -26,3 +26,5 @@ eureka:
     client:
         serviceUrl:
             defaultZone: http://${eureka.host}:8761/eureka/
+
+index: index

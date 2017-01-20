@@ -3,23 +3,20 @@ server:
 
 spring:
   profiles:
-
+    active: native
   application:
-        name: config-microservice
-    mvc:
-        view:
-            prefix: /
-            suffix: .jsp
+    name: config-microservice
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
 
-    cloud:
-      config:
-        server:
-          bootstrap: true
-          git:
-            uri: file:../config/
-
-spring.profiles.active=native
-spring.cloud.config.server.native.searchLocations=${user.dir}/src/main/resources/configs
+  cloud:
+    config:
+      server:
+        bootstrap: true
+        native:
+          search-locations: ../config/
 
 endpoints:
     restart:
