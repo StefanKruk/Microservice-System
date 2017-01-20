@@ -12,6 +12,7 @@
         <module>eureka-microservice</module>
         <module>frontend-microservice</module>
         <module>config-microservice</module>
+        <module>gateway-microservice</module>
     </modules>
 
     <scm>
