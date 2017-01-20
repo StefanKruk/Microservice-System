@@ -8,6 +8,9 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+      discovery:
+        enabled: true
+        service-id: config-microservice
 
 endpoints:
     restart:
