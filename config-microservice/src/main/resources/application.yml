@@ -1,13 +1,20 @@
+server:
+  port: 8888
+
 spring:
-  application:
-    name: frontend-microservice
-  mvc:
-    view:
-      prefix: /
-      suffix: .jsp
-  cloud:
-    config:
-      uri: http://localhost:8888
+    application:
+        name: config-microservice
+    mvc:
+        view:
+            prefix: /
+            suffix: .jsp
+
+    cloud:
+      config:
+        server:
+          bootstrap: true
+          git:
+            uri: file:../config/
 
 endpoints:
     restart:

@@ -11,6 +11,7 @@
     <modules>
         <module>eureka-microservice</module>
         <module>frontend-microservice</module>
+        <module>config-microservice</module>
     </modules>
 
     <scm>
