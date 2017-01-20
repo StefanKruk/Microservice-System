@@ -13,6 +13,8 @@
         <module>frontend-microservice</module>
         <module>config-microservice</module>
         <module>gateway-microservice</module>
+        <module>authentication-microservice</module>
+        <module>resource-server-microservice</module>
     </modules>
 
     <scm>
