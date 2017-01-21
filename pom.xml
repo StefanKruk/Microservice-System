@@ -14,7 +14,8 @@
         <module>config-microservice</module>
         <module>gateway-microservice</module>
         <module>authentication-microservice</module>
-        <module>resource-server-microservice</module>
+        <module>admin-microservice</module>
+        <module>resource-microservice</module>
     </modules>
 
     <scm>
