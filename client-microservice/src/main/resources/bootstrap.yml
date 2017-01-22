@@ -1,10 +1,6 @@
 spring:
   application:
-    name: frontend-microservice
-  mvc:
-    view:
-      prefix: /
-      suffix: .jsp
+    name: client-microservice
   cloud:
     config:
       discovery:

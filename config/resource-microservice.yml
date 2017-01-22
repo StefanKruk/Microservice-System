@@ -1,5 +1,9 @@
+logging:
+    level:
+      org.springframework.security: DEBUG
 server:
   port: 9999
+  address: 127.0.0.1
 
 security:
   sessions: NEVER

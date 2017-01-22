@@ -1,4 +1,10 @@
 server:
   port: 80
+
 security:
-  sessions: ALWAYS
+  basic:
+    enabled: false
+
+logging:
+    level:
+      org.springframework.security: DEBUG
