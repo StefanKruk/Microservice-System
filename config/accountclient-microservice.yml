@@ -1,0 +1,4 @@
+server:
+  port: 10002
+
+service.url: http://account-microservice/

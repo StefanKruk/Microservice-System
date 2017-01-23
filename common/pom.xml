@@ -6,6 +6,13 @@
 
     <groupId>de.stefankruk.microservice</groupId>
     <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.6.5</version>
+        </dependency>
+    </dependencies>
     <artifactId>common</artifactId>
 
 </project>

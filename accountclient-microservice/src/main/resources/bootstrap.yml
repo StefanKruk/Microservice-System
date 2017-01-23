@@ -1,6 +1,6 @@
 spring:
   application:
-    name: client-microservice
+    name: accountclient-microservice
   cloud:
     config:
       discovery:

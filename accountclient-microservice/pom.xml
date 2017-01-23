@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>de.stefankruk.microservice</groupId>
-	<artifactId>client-microservice</artifactId>
+	<artifactId>accountclient-microservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -71,6 +71,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>de.stefankruk.microservice</groupId>
+			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>common</artifactId>
 		</dependency>
 	</dependencies>
 
