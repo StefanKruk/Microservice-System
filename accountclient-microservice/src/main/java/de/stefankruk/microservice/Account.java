@@ -1,15 +1,12 @@
 package de.stefankruk.microservice;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
-@Entity
-public class Account implements Serializable {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Account implements Serializable{
 
-    @Id
-    @GeneratedValue
     private Long id;
 
     private String name;

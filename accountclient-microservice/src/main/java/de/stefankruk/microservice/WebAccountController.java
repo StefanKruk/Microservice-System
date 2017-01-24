@@ -1,21 +1,21 @@
 package de.stefankruk.microservice;
 
-import de.stefankruk.microservice.common.account.Account;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
+@RefreshScope
 @RestController()
 public class WebAccountController {
 
-    @Autowired
-    private WebAccountService webAccountService;
+    @Value("${my.message}")
+    private String home;
 
-    @RequestMapping("/acocunts")
-    public List<Account> getAll(){
-        System.err.println("ALERT");
-        return webAccountService.getAll();
+    @RequestMapping(method = RequestMethod.GET, value = "/")
+    public String home(){
+        return home;
     }
+
 }

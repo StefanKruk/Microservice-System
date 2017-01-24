@@ -7,7 +7,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-
 @SpringCloudApplication
 @EnableFeignClients
 public class AccountClientMicroserviceApplication {
@@ -16,16 +15,10 @@ public class AccountClientMicroserviceApplication {
         SpringApplication.run(AccountClientMicroserviceApplication.class, args);
     }
 
-
     @Bean
     @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
-    }
-
-    @Bean
-    public WebAccountService accountService() {
-        return new WebAccountService();
     }
 
 }

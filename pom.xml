@@ -15,7 +15,6 @@
         <module>gateway-microservice</module>
         <module>account-microservice</module>
         <module>accountclient-microservice</module>
-        <module>common</module>
     </modules>
 
     <scm>
