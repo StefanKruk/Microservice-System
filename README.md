@@ -6,7 +6,7 @@ This Microservice-Demo System makes use of the Spring Framework including Eureka
 
 # How to Start
 
-Before you can run the services you have to build them. For an easer use I added the [Maven Wrapper](https://github.com/takari/maven-wrapper) of [Takari](https://github.com/takari). 
+Before you can run the services you have to build them. For an easier use I added the [Maven Wrapper](https://github.com/takari/maven-wrapper) of [Takari](https://github.com/takari). 
 To Build the Services you have to execute `mvnw clean install` in the parent dir.
 After this all Services can be startet with `mvnw spring-boot:run`
 Please note that all Services have to be startet seperately first the config service and second the eureka service has do be started in order to work.
