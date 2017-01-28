@@ -1,25 +1,31 @@
 package de.stefankruk.microservice.frontend;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.cloud.client.SpringCloudApplication;
-import org.springframework.context.annotation.Bean;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @SpringCloudApplication
-public class FrontendMicroserviceApplication extends SpringBootServletInitializer {
-
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(FrontendMicroserviceApplication.class);
-    }
+@EnableOAuth2Client
+public class FrontendMicroserviceApplication extends WebSecurityConfigurerAdapter{
 
     public static void main(String[] args) {
         SpringApplication.run(FrontendMicroserviceApplication.class, args);
     }
 
-    @Bean
-    public HomeController homeController() {
-        return new HomeController();
+    @Override
+    public void configure(HttpSecurity http) throws Exception {
+        // @formatter:off
+        http
+                .logout().and()
+                .authorizeRequests()
+                .antMatchers("/index.html", "/home.html", "/", "/login").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .csrf()
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+        // @formatter:on
     }
 }

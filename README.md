@@ -38,6 +38,22 @@ All Services are running on different ports in order to work.
 * Eureka: 8761
 * Zuul: 80
 * config: 8888
+* authentication: 9999
 * frontend: 10000
 * account: 10002
 * client: 10003
+
+
+# Sonstiges
+
+Create Keystore:
+
+````
+keytool -genkeypair -alias jwt -keyalg RSA -keypass mySecretKey -keystore keystore.jks -storepass mySecretKey
+````
+
+Get the Public Key:
+
+````
+keytool -genkeypair -list -rfc -keystore keystore.jks | openssl x509 -inform pem -pubkey
+````

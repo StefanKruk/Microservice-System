@@ -1,6 +1,6 @@
 spring:
   application:
-    name: frontend-microservice
+    name: authentication-microservice
   cloud:
     config:
       discovery:
@@ -23,3 +23,11 @@ eureka:
     client:
         serviceUrl:
             defaultZone: http://${eureka.host}:8761/eureka/
+server:
+  port: 9999
+  context-path: /uaa
+security:
+  user:
+    password: password
+
+keystore.key: mySecretKey
