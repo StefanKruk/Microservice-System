@@ -7,7 +7,7 @@ spring:
 
 security:
   user:
-    password: none
+    password: password
   oauth2:
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
@@ -15,20 +15,8 @@ security:
       clientId: acme
       clientSecret: mySecretKey
     resource:
-      jwt:
-        keyValue: |
-          -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiPrn6FoEyOclHN/5oXrQ1wM1pFTK8hRC5MqodmNDQ+HNhGNk2GokbqVZB0+Tsndx6aCnLyO5cRosYI7ARsPTDh5MeUNpVKroimxGlZ6Ojffs+b9lxGasoIBlzjbDqGgolRHHdwimGzM0RltFYql6NSqhKKhpAdzQxSYqKSITOqODo1ENNms79M3YjcItLKAHc4C0aianYelQPm2jY2HrqMtp09ckTF/uccpAXTkcA9FcSzFLPiNbk/lNrqtsNNQ7o4ZquWni/wlpJi6U/Ue/H8W9EQUg7YgxGVV2/4AcWJTsNhR0gQresPzi0A1ll6RRVOEh1v0pjzYCdxhfPTGpJwIDAQAB
-          -----END PUBLIC KEY-----
-
+      userInfoUri: http://localhost:9999/uaa/user
 
 logging:
     level:
       org.springframework.security: DEBUG
-
-zuul:
-  routes:
-    fronted:
-      path: /
-      serviceId: frontend-microservice
-      stripPrefix: false

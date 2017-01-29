@@ -3,7 +3,7 @@ server:
 
 security:
   user:
-    password: none
+    password: password
   oauth2:
     client:
       accessTokenUri: http://localhost:9999/uaa/oauth/token
