@@ -15,6 +15,7 @@
         <module>account-microservice</module>
         <module>accountclient-microservice</module>
         <module>authentication-microservice</module>
+        <module>resource-microservice</module>
     </modules>
 
     <scm>
