@@ -15,11 +15,26 @@ endpoints:
         sensitive: false
 
 eureka:
-    host: localhost
-    instance:
-        health-check-url: http://${eureka.host}:${server.port}/
-        statusPageUrlPath: /info
-        healthCheckUrlPath: /health
-    client:
-        serviceUrl:
-            defaultZone: http://${eureka.host}:8761/eureka/
+  instance:
+    hostname: localhost
+    port: 8761
+    health-check-url: http://${eureka.host}:${server.port}/
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+
+---
+spring:
+  profiles: docker
+
+server:
+  port: ${SERVICE_PORT}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${REGISTRY_URL}
