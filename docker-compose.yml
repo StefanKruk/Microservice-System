@@ -1,4 +1,19 @@
-redis:
-  image: redis
-  ports:
-    - "6379:6379"
+version: "3"
+services:
+  config-microservice:
+    image: stefankruk/config-microservice
+    environment:
+      SERVICE_HOST: config
+      SERVICE_PORT: 8888
+      REGISTRY_URL: http://service-registry:8761/eureka
+
+  eureka-microservice:
+    image: stefankruk/eureka-microservice
+    environment:
+      SERVICE_HOST: eureka
+      SERVICE_PORT: 8761
+    depends_on:
+      - config-microservice
+    links:
+      - config-microservice:config-microservice
+
