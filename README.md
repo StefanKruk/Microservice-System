@@ -39,7 +39,7 @@ All Services are running on different ports in order to work.
 * Zuul: 80
 * config: 8888
 * authentication: 9999
-* frontend: 10000
+* resource: 10000
 * account: 10002
 * client: 10003
 

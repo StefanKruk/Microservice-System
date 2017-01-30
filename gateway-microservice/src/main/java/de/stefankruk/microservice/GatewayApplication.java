@@ -7,23 +7,13 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.security.Principal;
 
 @SpringCloudApplication
 @EnableZuulProxy
 @EnableOAuth2Sso
-@RestController
 public class GatewayApplication extends WebSecurityConfigurerAdapter {
 	public static void main(String[] args) {
 		SpringApplication.run(GatewayApplication.class, args);
-	}
-
-	@RequestMapping("/user")
-	public Principal user(Principal user) {
-		return user;
 	}
 
 	@Override

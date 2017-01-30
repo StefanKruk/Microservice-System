@@ -16,7 +16,7 @@ function($rootScope, $http, $location, $route) {
 		return $route.current && route === $route.current.controller;
 	};
 
-	$http.get('user').then(function(response) {
+	$http.get('uaa/user').then(function(response) {
 		if (response.data.name) {
 			$rootScope.authenticated = true;
 		} else {

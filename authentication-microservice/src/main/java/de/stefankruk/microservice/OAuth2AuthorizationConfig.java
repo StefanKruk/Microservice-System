@@ -42,7 +42,7 @@ public class OAuth2AuthorizationConfig extends AuthorizationServerConfigurerAdap
                 .withClient("acme")
                 .secret("mySecretKey")
                 .authorizedGrantTypes("authorization_code", "refresh_token",
-                        "password").scopes("openid");
+                        "password").scopes("openid").autoApprove(true);
     }
 
     @Override

@@ -1,6 +1,6 @@
 spring:
   application:
-    name: frontend-microservice
+    name: resource-microservice
   cloud:
     config:
       discovery:

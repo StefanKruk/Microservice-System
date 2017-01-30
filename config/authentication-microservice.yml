@@ -1,4 +1,13 @@
+server:
+  port: 9999
+  context-path: /uaa
+  use-forward-headers: false
+
+keystore.key: mySecretKey
+
 security:
+  basic:
+    enabled: false
   user:
     password: password
 
