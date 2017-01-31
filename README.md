@@ -29,7 +29,7 @@ The gateway-microservice use the eureka-microservice (service discovery) to rout
 GET /{microservice-name}/{microservice-api}
 ````
 In order to rout all traffic you first have to tell the service which service to use.
-After that you can use the microservice specefic api.
+After that you can use the microservice specific api.
 
 # Ports
 
