@@ -35,13 +35,13 @@ After that you can use the microservice specefic api.
 
 All Services are running on different ports in order to work.
 
-* Eureka: 8761
-* Zuul: 80
-* config: 8888
-* authentication: 9999
-* resource: 10000
-* account: 10002
-* client: 10003
+* Eureka: (localhost:8761)
+* Zuul: (localhost:80)
+* config: (localhost:8888)
+* authentication: (localhost:9999)
+* resource: (localhost:10000)
+* account: (localhost:10002)
+* client: (localhost:10003)
 
 
 # Others
