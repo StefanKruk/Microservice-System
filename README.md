@@ -44,7 +44,7 @@ All Services are running on different ports in order to work.
 * client: 10003
 
 
-# Sonstiges
+# Others
 
 Create Keystore:
 
