@@ -6,6 +6,12 @@ This Microservice-Demo System makes use of the Spring Framework including Eureka
 
 # How to Start
 
+## Docker
+The easiest way to start this System is to use Docker. You only have to run `run.sh` in order to start all services.
+If you are on a Windows System, start a bash shell, for example the one which is provided by GIT.
+After that you can also run shell scripts
+
+## Manuelly
 Before you can run the services you have to build them. For an easier use I added the [Maven Wrapper](https://github.com/takari/maven-wrapper) of [Takari](https://github.com/takari). 
 To Build the Services you have to execute `mvnw clean install` in the parent dir.
 After this all Services can be startet with `mvnw spring-boot:run`
@@ -19,7 +25,7 @@ Now all other services can be startet, but i recommend to start the gateway serv
 # APIs
 
 * account-microservice: `GET /accounts`
-* accountclient-microservice: `GET /`
+* accountclient-microservice: `GET /` `GET /feignexample` `GET /templateexample` `GET /hystrixexample`
 * config-microservice: `GET /{microservice-name}/default`
 * frontend-microservice: `GET /`
 

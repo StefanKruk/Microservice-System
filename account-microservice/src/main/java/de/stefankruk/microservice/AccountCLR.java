@@ -19,5 +19,7 @@ public class AccountCLR implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Stream.of("Stefan", "Tim", "Josh", "Johannes").forEach(n -> accountRepository.save(new Account(n)));
+
+        accountRepository.findAll().forEach(System.out::println);
     }
 }

@@ -3,7 +3,7 @@
 set -e
 
 # Build the project and docker images
-#./mvnw clean install -P docker
+./mvnw clean install -P docker
 
 # Export the active docker machine IP
 export DOCKER_IP=${docker-machine ip $(docker-machine active)}
@@ -15,7 +15,7 @@ DOCKER_IP=${DOCKER_IP:-0.0.0.0}
 docker-compose stop
 docker-compose rm -f
 
-# Start the eureka-microservice next and wait
+# Start the eureka-microservice fist and wait for it to become available
 docker-compose up -d eureka-microservice
 
 while [ -z ${EUREKA_SERVICE_READY} ]; do
@@ -26,7 +26,7 @@ while [ -z ${EUREKA_SERVICE_READY} ]; do
     sleep 2
 done
 
-# Start the config service fist and wait for it to become available
+# Start the config service next and wait
 docker-compose up -d config-microservice
 
 while [ -z ${CONFIG_SERVICE_READY} ]; do
@@ -41,4 +41,4 @@ done
 docker-compose up -d
 
 # Attach to the log output of the cluster
-docker-compose logs
+docker-compose logs -f

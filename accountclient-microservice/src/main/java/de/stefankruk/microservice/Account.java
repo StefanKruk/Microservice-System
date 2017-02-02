@@ -5,9 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Account implements Serializable{
-
-    private Long id;
+public class Account implements Serializable {
 
     private String name;
 
@@ -16,14 +14,6 @@ public class Account implements Serializable{
 
     public Account(String name) {
         this.name = name;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

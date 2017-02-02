@@ -22,9 +22,11 @@ services:
     image: stefankruk/gateway-microservice
     environment:
       REGISTRY_HOST: eureka-microservice
+      UAA_HOST: authentication-microservice
     depends_on:
       - eureka-microservice
       - config-microservice
+      - authentication-microservice
     ports:
       - 80:80
 
@@ -35,6 +37,8 @@ services:
     depends_on:
       - eureka-microservice
       - config-microservice
+    ports:
+      - 9999:9999
 
   resource-microservice:
     image: stefankruk/resource-microservice
@@ -43,6 +47,8 @@ services:
     depends_on:
       - eureka-microservice
       - config-microservice
+    ports:
+      - 10000:10000
 
   account-microservice:
     image: stefankruk/account-microservice
@@ -51,6 +57,8 @@ services:
     depends_on:
       - eureka-microservice
       - config-microservice
+    ports:
+      - 10002:10002
 
   accountclient-microservice:
     image: stefankruk/accountclient-microservice
@@ -59,3 +67,6 @@ services:
     depends_on:
       - eureka-microservice
       - config-microservice
+    ports:
+      - 10003:10003
+

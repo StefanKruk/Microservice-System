@@ -21,4 +21,9 @@ public class AccountClientMicroserviceApplication {
         return new RestTemplate();
     }
 
+    @Bean
+    public WebAccountController webAccountController(){
+        return new WebAccountController();
+    }
+
 }

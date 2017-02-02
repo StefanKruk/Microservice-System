@@ -50,8 +50,8 @@ security:
     password: password
   oauth2:
     client:
-      accessTokenUri: http://authentication-microservice:9999/uaa/oauth/token
-      userAuthorizationUri: http://authentication-microservice:9999/uaa/oauth/authorize
+      accessTokenUri: http://${UAA_HOST}:9999/uaa/oauth/token
+      userAuthorizationUri: http://${UAA_HOST}:9999/uaa/oauth/authorize
       clientId: acme
       clientSecret: mySecretKey
     resource:
