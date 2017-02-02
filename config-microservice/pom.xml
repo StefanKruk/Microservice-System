@@ -94,22 +94,6 @@
                                     </resources>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>prepare-configs</id>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>copy-resources</goal>
-                                </goals>
-                                <configuration>
-                                    <outputDirectory>${project.build.directory}/docker/config</outputDirectory>
-                                    <resources>
-                                        <resource>
-                                            <directory>${project.basedir}/../config</directory>
-                                            <filtering>true</filtering>
-                                        </resource>
-                                    </resources>
-                                </configuration>
-                            </execution>
                         </executions>
                     </plugin>
                     <plugin>

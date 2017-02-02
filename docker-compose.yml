@@ -1,19 +1,61 @@
 version: "3"
 services:
+  eureka-microservice:
+      image: stefankruk/eureka-microservice
+      environment:
+        SERVICE_HOST: eureka-microservice
+      ports:
+        - 8761:8761
+
   config-microservice:
     image: stefankruk/config-microservice
     environment:
-      SERVICE_HOST: config
-      SERVICE_PORT: 8888
-      REGISTRY_URL: http://service-registry:8761/eureka
+      SERVICE_HOST: config-microservice
+      REGISTRY_HOST: eureka-microservice
+      CONFIG_LOCATION: /var/tmp/config
+    volumes:
+      - ./config/:/var/tmp/config
+    ports:
+      - 8888:8888
 
-  eureka-microservice:
-    image: stefankruk/eureka-microservice
+  gateway-microservice:
+    image: stefankruk/gateway-microservice
     environment:
-      SERVICE_HOST: eureka
-      SERVICE_PORT: 8761
+      REGISTRY_HOST: eureka-microservice
     depends_on:
+      - eureka-microservice
       - config-microservice
-    links:
-      - config-microservice:config-microservice
+    ports:
+      - 80:80
 
+  authentication-microservice:
+    image: stefankruk/authentication-microservice
+    environment:
+      REGISTRY_HOST: eureka-microservice
+    depends_on:
+      - eureka-microservice
+      - config-microservice
+
+  resource-microservice:
+    image: stefankruk/resource-microservice
+    environment:
+      REGISTRY_HOST: eureka-microservice
+    depends_on:
+      - eureka-microservice
+      - config-microservice
+
+  account-microservice:
+    image: stefankruk/account-microservice
+    environment:
+      REGISTRY_HOST: eureka-microservice
+    depends_on:
+      - eureka-microservice
+      - config-microservice
+
+  accountclient-microservice:
+    image: stefankruk/accountclient-microservice
+    environment:
+      REGISTRY_HOST: eureka-microservice
+    depends_on:
+      - eureka-microservice
+      - config-microservice

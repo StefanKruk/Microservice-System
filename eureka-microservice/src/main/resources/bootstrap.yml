@@ -25,7 +25,7 @@ logging:
 spring:
   profiles: docker
 server:
-  port: ${SERVICE_PORT}
+  port: 8761
 eureka:
   instance:
     hostname: ${SERVICE_HOST}
