@@ -11,7 +11,7 @@ The easiest way to start this System is to use Docker. You only have to run `run
 If you are on a Windows System, start a bash shell, for example the one which is provided by GIT.
 After that you can also run shell scripts
 
-## Manuelly
+## Maven
 Before you can run the services you have to build them. For an easier use I added the [Maven Wrapper](https://github.com/takari/maven-wrapper) of [Takari](https://github.com/takari). 
 To Build the Services you have to execute `mvnw clean install` in the parent dir.
 After this all Services can be startet with `mvnw spring-boot:run`
