@@ -1,7 +1,7 @@
 server:
   port: 9999
   context-path: /uaa
-  use-forward-headers: true
+  use-forward-headers: false
 
 keystore.key: mySecretKey
 
@@ -10,6 +10,7 @@ security:
     enabled: false
   user:
     password: password
+
 
 logging:
   level:

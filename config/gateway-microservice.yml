@@ -22,8 +22,6 @@ security:
           -----BEGIN PUBLIC KEY-----
           MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0/0ae2FHjP86kAQ3/FGlje7MmDfBrH9XErxwMpqV96gMX7jFYKGeIdz68DziDulAkHldn9orDtuTYRc6K2+/7hGNG/O5K4ANT2kGfJWTL8dK83FSI17cbHR584Pqz78nJn3Dj6ZaccQ3xok0eMSCMo7wO5rljV1PMnsCMfg7PQIXtkEGO6GNVRRghJdlhpxWa17569MI91Rk9oFIrbIAQcYocC477nzSNFdSG9vwAjpVgjCSoZnpw/2zBcFvvJ/ZYWheUTEoYLKtGmK2xSuVBF6RMMeN+I7k6HNDjdO+PZSVd+2LyVJH6fca88/UeQYnpAM8KHtDqN3iRmLOe+woNQIDAQAB
           -----END PUBLIC KEY-----
-      id: openid
-      serviceId: ${PREFIX:}resource
 
 zuul:
   add-proxy-headers: true
@@ -32,9 +30,8 @@ zuul:
       path: /resource/**
       serviceId: resource-microservice
       stripPrefix: false
-    uaa:
+    authentication-microservice:
       path: /uaa/**
-      serviceId: authentication-microservice
       stripPrefix: false
       sensitiveHeaders:
 

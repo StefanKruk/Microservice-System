@@ -35,9 +35,6 @@ eureka:
     prefer-ip-address: true
     hostname: ${REGISTRY_HOST}
     port: 8761
-    health-check-url: http://${eureka.host}:${server.port}/
-    statusPageUrlPath: /info
-    healthCheckUrlPath: /health
   client:
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/

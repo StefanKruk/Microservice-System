@@ -31,13 +31,10 @@ spring:
 
 eureka:
   instance:
-    prefer-ip-address: true
+    preferIpAddress: true
     hostname: ${REGISTRY_HOST}
     port: 8761
-    health-check-url: http://${eureka.host}:${server.port}/
-    statusPageUrlPath: /info
-    healthCheckUrlPath: /health
   client:
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${eureka.instance.port}/eureka
 

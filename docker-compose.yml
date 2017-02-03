@@ -22,11 +22,11 @@ services:
     image: stefankruk/gateway-microservice
     environment:
       REGISTRY_HOST: eureka-microservice
-      UAA_HOST: authentication-microservice
     depends_on:
       - eureka-microservice
       - config-microservice
-      - authentication-microservice
+    links:
+      - authentication-microservice:authentication-microservice
     ports:
       - 80:80
 
